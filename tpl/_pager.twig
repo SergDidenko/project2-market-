@@ -1,0 +1,18 @@
+<link rel="stylesheet" type="text/css" href="../css/file.css">
+<ul class="pagination">
+	{% if page > 1 %}
+		<li><a href="/blog/1">&laquo;</a></li>
+		<li><a href="/blog/{{ page - 1 }}">&lsaquo;</a></li>
+	{% endif %}
+	{% for link in links %}
+		{% if link != 1 %}
+			<li><a href="/blog/{{ link }}">{{ link }}</a></li>
+		{% else %}
+			<li><a href="/blog">{{ link }}</a></li>
+		{% endif %}
+	{% endfor %}
+	{% if page < maxpage %}
+		<li><a href="/blog/{{ page + 1 }}">&rsaquo;</a></li>
+		<li><a href="/blog/{{ maxpage }}">&raquo;</a></li>
+	{% endif %}
+</ul>

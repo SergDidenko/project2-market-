@@ -1,0 +1,25 @@
+{% extends '_main.twig' %}
+{% block content %}
+	{{ parent() }}
+    <div class="">
+           <div class="carousel shadow"> 
+              <div class="carousel-button-left"><a href="#"></a></div> 
+              <div class="carousel-button-right"><a href="#"></a></div> 
+                <div class="carousel-wrapper"> 
+                   <div class="carousel-items">
+                      {% for p in products %}
+                        <div class="carousel-block">
+                            <img src="{{ p.imagePath[0] }}" alt="" />
+                        </div>
+                      {% endfor %}
+                   </div>
+                </div>
+           </div>
+    </div>
+    <hr>
+    <div>
+    {% for p in posts %}
+        {% include '_post_result.twig' with {'title':p.title, 'content':p.content, 'image':p.imagePath, 'date':p.createAt.date, 'username':p.user.username} %}
+    {% endfor %}
+    </div>
+{% endblock %}

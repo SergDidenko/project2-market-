@@ -1,0 +1,8 @@
+{% extends '_main.twig' %}
+{% block content %}
+    {% for p in posts %}
+    	{% for tag in p. tags if t == (tag.id) %}
+		{% include '_post_result.twig' with {'title':p.title, 'content':p.content, 'image':p.imagePath, 'date':p.createAt.date, 'username':p.user.username } %}
+		{% endfor %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends '_main.twig' %}
+{% block content %}
+	{{ parent() }}
+	{% block history %}
+	<span class='history_title'>History</span>
+	<hr>
+		<p class='history_content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia aliquam voluptates quidem, quibusdam voluptas recusandae reiciendis earum incidunt. Odio dolore beatae, repellendus neque vero ipsa aperiam, quaerat distinctio deserunt quis!
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat.
+		</p>
+		<img class='history_picture' src="img/second.jpg" >
+	    <p class='history_content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<span class='history_title'>Nowadays</span>
+		<hr>
+		<img class='history_picture' src="img/first.jpg" >
+		<p class='history_content'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat consequuntur totam dignissimos, voluptatem voluptatibus eius hic soluta illo illum, delectus numquam non porro, ipsa distinctio. Consectetur minus cumque mollitia totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptates saepe ab quae perferendis recusandae natus ut facere, mollitia, deserunt error quo ipsam dolores commodi similique qui consectetur, id porro.</p>
+	{% endblock %}
+
+	<a class='history_link' onclick="getForm('contact_form')">Contact us by email</a>
+
+	{% block form %}
+		<div id='contact_form'>
+	    <form action="" method="POST" class="form-horizontal" role="form">
+	    		<div class="form-group">
+	    			
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="inputName" class="col-sm-2 control-label">Title:</label>
+	    			<div class="col-sm-10">
+	    				<input type="text" name="title" id="inputName" class="form-control" value="" title="">
+	    				<span class="form-error">
+	    					{% for e in err_obj.subject %}
+	    					    {{ e }}
+	    					{% endfor %}
+	    				</span>
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="inputEmail" class="col-sm-2 control-label">Email:</label>
+	    			<div class="col-sm-10">
+	    				<input type="text" name="email" id="inputEmail" class="form-control" value="" title="">
+	    				<span class="form-error">
+	    					{% for e in err_obj.from %}
+	    					    {{ e }}
+	    					{% endfor %}
+	    				</span>
+	    			</div>
+	    		</div>
+	    		<div class="form-group">
+	    			<label for="textareaText" class="col-sm-2 control-label">Text:</label>
+	    			<div class="col-sm-10">
+	    				<textarea name="text" id="textareaText" class="form-control" rows="3" ></textarea>
+	    				<span class="form-error">
+	    					{% for e in err_obj.message %}
+	    					    {{ e }}
+	    					{% endfor %}
+	    				</span>
+	    			</div>
+	    		</div>
+	    
+	    		<div class="form-group">
+	    			<div class="col-sm-10 col-sm-offset-2">
+	    				<button type="submit" class="btn btn-primary">Send</button>
+	    			</div>
+	    		</div>
+	    </form>
+	    </div>
+	    <hr>
+	    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2565.543796014149!2d36.24552631512733!3d49.98241342885978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4127a0895349cf0d%3A0x3f2221ee23ebb315!2zR1NNLdCl0LDRgNGM0LrQvtCy!5e0!3m2!1sru!2sua!4v1482672935259" width="100%" height="350" frameborder="" style="border:0" allowfullscreen></iframe>
+	{% endblock %}
+	
+{% endblock %}

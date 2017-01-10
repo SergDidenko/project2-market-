@@ -1,0 +1,44 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<h3 class="panel-title"><a href="/post/{{ p.id }}">{{ title }}</a> 
+			<span>[User : {{ username }}]</span></h3>		
+		<span>
+		{{ date|date('Y-m-d H:i:s') }}
+			<span>
+				Tags: 
+				{% for tag in p.tags %}
+					<a href="/tag/{{ tag.id }}" class="panel-title_tag">{{ " | " ~ tag.tag ~ " | " }}</a>
+				{% endfor %}
+			</span>
+		</span>
+	</div>
+	<div class="panel-body">
+		<div><img class="content_image" src="{{ "\\" ~ image }}" width=200 height=200></div>
+		<div class="content_post">{{ content }}</div>
+		<hr>
+		{% if user_name == username and user_name != null %}
+			<a href="/post/{{ p.id }}/update" class="btn btn-sm btn-success">Update</a>
+			<a class="btn btn-sm btn-danger" data-toggle="modal" href='#modal-id{{title}}'>Delete</a>
+			<div class="modal fade" id="modal-id{{title}}">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Are you sure?</h4>
+						</div>
+						<div class="modal-body">
+							You would like to delete your post
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<a href="/post/{{ p.id }}/delete" class="btn btn-primary">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			
+		{% endif %}
+	</div>
+</div>

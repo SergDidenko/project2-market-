@@ -1,0 +1,35 @@
+{% extends '_main.twig' %}
+{% block content %}
+
+	<div class="">
+	   <div class="carousel home shadow"> 
+	      <div class="carousel-button-left"><a href="#"></a></div> 
+	      <div class="carousel-button-right"><a href="#"></a></div> 
+			<div class="carousel-wrapper"> 
+			   <div class="carousel-items">
+			   	  {% for img in products.imagePath %}
+			   	    <div class="carousel-block">
+						<img src="\{{img}}" alt="" />
+				  	</div>
+			   	  {% endfor %}
+			   </div>
+			</div>
+	   </div>
+</div>
+<div class="separate-product">
+	<h4 class="separate-product-title">Name:</h4>
+	<span class="separate-product-description">{{ products.productName }} </span>
+	<h4 class="separate-product-title">Description:</h4>
+	    <span class="separate-product-description">{{ products.description|nl2br }} </span>
+	<h4 class="separate-product-title">Price: </h4>
+	 <span class="separate-product-description">{{ products.price }} UAH</span>
+</div>	
+{% if user == "root" or user == "admin" %}
+	
+	<div class="update-product">
+		<a href='/catalog/{{ category_id }}/{{ product_id }}/update' class="btn btn-sm btn-success">Update</a>
+		<a href='/catalog/{{ category_id }}/{{ product_id }}/delete' class="btn btn-sm btn-danger">Delete</a>
+	</div>
+{% endif %}
+{% endblock %}
+

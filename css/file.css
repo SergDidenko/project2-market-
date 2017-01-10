@@ -1,0 +1,156 @@
+#contact_form{
+	display: none;
+}
+.history_content{
+	text-align: justify;
+
+}
+.history_picture{
+	width:100%;
+	height:400px;
+	margin:10px 0;
+}
+a{
+	cursor: pointer;
+}
+.history_link, .history_title{
+	color:#808080;
+	font-weight: bold;
+	font-size: 16px;
+	
+}
+.history_link:hover{
+	color:#7CFC00;
+	cursor: pointer;
+}
+#scrollup {
+position: fixed; 
+background: #808080;
+padding: 8px;
+border-radius: 100%; 
+right: 10px; 
+bottom: 20px; 
+display: none; 
+cursor: pointer;
+}
+.carousel{
+	margin-bottom:50px;
+}
+.content_image{
+	float:left;
+	margin-left: 10px;
+	margin-right:20px;
+}
+#post-form{
+	display: none;
+}
+.panel-title_tag{
+	font-size:16px;
+	color:#A52A2A;
+	font-weight: bold;
+	font-style: italic;
+	text-decoration:none;
+}
+.panel-title_tag:hover{
+	font-size:16px;
+	color:#7CFC00;
+	font-style: italic;
+	text-decoration:none;
+}
+.pagination{
+	margin-left:100px;
+}
+.pagination>li{
+	color:#7CFC00;
+}
+.list-group-item{
+	width:200px;
+}
+
+.list-products{
+	width: 900px;
+	float:left;
+}
+.list-group{
+	width: 200px;
+	float:left;
+}
+.list-products-items:after{
+	content:'';
+	word-spacing: 280px;
+    padding-left: 280px;
+}
+.list-products-item{
+	list-style-type: none;
+	display: inline-block;
+	margin:0 0 20px 0;
+	vertical-align: top;
+	/*text-align: center;*/
+	border:2px solid grey;
+	width: 280px;
+	height:200px;
+}
+#options{
+	margin:0 0 30px 40px;
+	border: 2px solid grey;
+	padding:10px;
+}
+#slider_price{
+	width:510px;
+	margin: 10px;
+
+}
+#price, #price2{
+	border:2px solid black;
+	margin:10px;
+
+}
+.search-field{
+	width: 700px;
+	text-indent:10px;
+	border:2px solid black;
+	margin:10px;
+	font-size: 16px;
+}
+.price-title{
+	margin:10px;
+}
+.list-products-title, .list-products-link{
+	margin-left:10px;
+	color:grey;
+	font-weight: bold;
+}
+.list-products-link{
+	color:black;
+	font-weight: bold;
+}
+.list-products-currency{
+	color:#A52A2A;
+	font-weight: bold;
+}
+.list-products-description{
+	margin-left: 10px;
+}
+.separate-product{
+	width:600px;
+	margin:50px;
+	float:left;
+	border:1px solid grey;
+	padding:10px;
+}
+.separate-product-description{
+	color:#A52A2A;
+	margin-bottom: 10px;
+}
+.separate-product-title{
+	color:#7CFC00;
+	margin:0 0 10px 0;
+}
+.update-product{
+	margin-left:50px;
+	float:left;
+}
+.form-error{
+	color: #A52A2A;
+	font-weight: bold;
+}

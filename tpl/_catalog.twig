@@ -1,0 +1,42 @@
+{% extends '_main.twig' %}
+{% block content %}
+<div class="list-group" id="links">
+	<a href="/catalog/1" class="list-group-item">Cellphone</a>
+	<a href="/catalog/2" class="list-group-item">TV</a>
+</div>
+<div class="list-products">
+<div id="options">
+	<div class="search">
+		<form method="POST">
+			<input class="search-field" type="text" name="search" placeholder="search products">
+			<button type="submit" class="btn btn-sm btn-primary">Search</button>
+		</form>
+	</div>
+	<hr>
+	<form method="POST">
+		<label for="price">
+			<span class="price-title">From:</span> <input type="text" name="price" id="price">
+		</label>
+		<label for="price2">
+			<span class="price-title">To:</span> <input type="text" name="price2" id="price2">
+		</label>
+		<button type="submit" class="btn btn-sm btn-primary">Confirm</button>
+	</form>
+	<div id="slider_price"></div>
+</div>
+	<ul class="list-products-items">
+		{% for p in products %}
+			<li class="list-products-item">
+				<img src="{{ '/' ~ p.imagePath[0] }}" width='100%' height='150'>
+				<a class="list-products-link" href="/catalog/
+				{% for c in category if c.product == p.id %}
+					{{ c.category }}
+				{% endfor %}
+				/{{ p.id }}">{{ p.productName }}</a><br>
+				<span class="list-products-title">Price: {{ p.price }} <span class="list-products-currency">UAH</span></span>
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}

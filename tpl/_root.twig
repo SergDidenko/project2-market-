@@ -1,0 +1,16 @@
+{% extends '_main.twig' %}
+{% block content %}
+	{% for user in users %}
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<h3 class="panel-title">{{ user.admin }}</h3>
+			</div>
+			<div class="panel-body">
+				{{ user.id }} -> {{ user.username }} -> {{ user.password }}
+				<hr>
+				<a href='/root/update/{{ user.id }}' class="btn btn-success">Update</a>
+				<a href='/root/delete/{{ user.id }}' class="btn btn-danger">Delete</a>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}

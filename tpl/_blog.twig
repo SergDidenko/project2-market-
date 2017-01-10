@@ -1,0 +1,16 @@
+{% extends '_main.twig' %}
+{% block content %}
+    {{ parent() }}
+    {% for p in posts %}
+        {% include '_post_result.twig' with {'title':p.title, 'content':p.content, 'image':p.imagePath, 'date':p.createAt.date, 'username':p.user.username } %}
+    {% endfor %}
+    <hr>
+    {% if action != "separate" %}
+    <a class='history_link' onclick="getForm('post-form')">Add new post</a>
+    {% block form %}
+    	<div id="post-form">
+       		{% include "_post_form.twig" with {'button' : 'Create'} %}
+    	</div>
+    {% endblock %}
+    {% endif %}
+{% endblock %}

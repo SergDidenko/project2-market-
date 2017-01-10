@@ -1,0 +1,78 @@
+{% extends '_main.twig' %}
+
+{% block content %}
+    
+	<form action="" method="POST" class="form-horizontal" role="form" enctype="multipart/form-data">
+			<div class="form-group">
+				<legend>{{ button }} product</legend>
+			</div>
+			<div class="form-group">
+				<label for="inputName" class="col-sm-2 control-label">Name:</label>
+				<div class="col-sm-10">
+					<input type="text" name="name" id="inputName" class="form-control" value="{{ product.productName }}"  title="">
+					<span class="form-error">
+						{% for e in err_obj.productName %}
+							  {{ e }}
+						{% endfor %}
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="textareaDescription" class="col-sm-2 control-label">Description:</label>
+				<div class="col-sm-10">
+					<textarea name="description" id="textareaDescription" class="form-control" rows="3" wrap="soft">{{ product.description }}</textarea>
+					<span class="form-error">
+						{% for e in err_obj.description %}
+							{{ e }}
+						{% endfor %}
+					</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputPrice" class="col-sm-2 control-label">Price:</label>
+				<div class="col-sm-10">
+					<input type="number" name="price" id="inputPrice" class="form-control" value="{{ product.price }}" title="">
+					<span class="form-error">
+						{% for e in err_obj.price %}
+							{{ e }}
+						{% endfor %}
+				</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="inputUpload" class="col-sm-2 control-label">Upload:</label>
+				<div class="col-sm-10">
+					<input type="file" name="upload[]" id="inputUpload" class="form-control" value="{{ product.imageName }}"  title="" multiple>
+				</div>
+			</div>
+
+			<h4>Discount</h4>
+			<div class="radio">
+				<label>
+					<input type="radio" name="discount" id="inputDiscount" value="yes" {% if product.discount == 'yes' %} checked {% endif %} checked>
+					Yes
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="discount" id="inputDiscount" value="no" {% if product.discount == 'no' %} checked {% endif %}>
+					No
+				</label>
+			</div>
+			<hr>
+			<h4>Category</h4>
+			{% for c in category %}
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="input" value="{{ c.categoryName }}" {% if category_id == c.id %} checked {% endif %} >
+						{{ c.categoryName|upper }}
+					</label>
+				</div>
+			{% endfor %}
+			<div class="form-group">
+				<div class="col-sm-10 col-sm-offset-2">
+					<button type="submit" class="btn btn-primary">{{ button }}</button>
+				</div>
+			</div>
+	</form>
+{% endblock %}
